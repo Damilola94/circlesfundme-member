@@ -19,11 +19,23 @@ export default function OnboardingIntroPage() {
 
   return (
     <div className="relative flex min-h-dvh flex-1 flex-col overflow-hidden bg-black text-white">
-      <Image src={background} alt="" fill priority placeholder="blur" sizes="430px" className="object-cover" />
+      <Image
+        src={background}
+        alt=""
+        fill
+        priority
+        placeholder="blur"
+        sizes="430px"
+        className="object-cover"
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/90" />
 
-      <LogoMark color="#f5f5f5" className="absolute top-9 right-4 opacity-80" />
-
+      {/* <LogoMark color="#f5f5f5" className="absolute top-9 right-4 opacity-80" /> */}
+      <Image
+        src="/images/logo-icon.png"
+        alt=""
+        className="absolute top-0 left-0 h-full w-full object-cover"
+      />
       <div className="relative mt-auto flex flex-col px-4 pb-8">
         <h1 className="text-[34px] leading-[1.25] font-medium">
           Fund your future,
