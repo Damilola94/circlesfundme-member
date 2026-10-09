@@ -455,6 +455,10 @@
     inset-block: 0;
   }
 
+  .top-0 {
+    top: 0;
+  }
+
   .top-1\.5 {
     top: calc(var(--spacing) * 1.5);
   }
@@ -935,6 +939,10 @@
 
   .w-px {
     width: 1px;
+  }
+
+  .max-w-85 {
+    max-width: calc(var(--spacing) * 85);
   }
 
   .max-w-\[320px\] {
@@ -1622,6 +1630,20 @@
     .bg-white\/20 {
       background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
     }
+  }
+
+  .bg-linear-to-b {
+    --tw-gradient-position: to bottom;
+  }
+
+  @supports (background-image: linear-gradient(in lab, red, red)) {
+    .bg-linear-to-b {
+      --tw-gradient-position: to bottom in oklab;
+    }
+  }
+
+  .bg-linear-to-b {
+    background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
   .bg-gradient-to-b {

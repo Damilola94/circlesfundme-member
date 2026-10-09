@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { updateSession } from "@/lib/api/client";
 import { Button } from "@/components/ui/button";
-import { LogoMark } from "@/components/brand/logo-mark";
 import background from "../../../../public/images/onboarding/onboarding.png";
 
 export default function OnboardingIntroPage() {
@@ -28,21 +27,22 @@ export default function OnboardingIntroPage() {
         sizes="430px"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/90" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/10 to-black/90" />
 
-      {/* <LogoMark color="#f5f5f5" className="absolute top-9 right-4 opacity-80" /> */}
       <Image
         src="/images/logo-icon.png"
         alt=""
-        className="absolute top-0 left-0 h-full w-full object-cover"
+        width={90}
+        height={32}
+        className="absolute top-9 right-4 opacity-80"
       />
       <div className="relative mt-auto flex flex-col px-4 pb-8">
-        <h1 className="text-[34px] leading-[1.25] font-medium">
+        <h1 className="text-[34px] leading-tight font-medium">
           Fund your future,
           <br />
           one circle at a time
         </h1>
-        <p className="mt-6 max-w-[340px] text-base leading-relaxed text-white/80">
+        <p className="mt-6 max-w-85 text-base leading-relaxed text-white/80">
           Build your credit, access funding, and achieve your goals.
         </p>
         <Button

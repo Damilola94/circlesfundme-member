@@ -1,9 +1,4 @@
 {
-  "/(tabs)/dashboard/page": "app/(tabs)/dashboard/page.js",
-  "/(tabs)/history/page": "app/(tabs)/history/page.js",
-  "/(tabs)/notification/page": "app/(tabs)/notification/page.js",
-  "/(tabs)/profile/page": "app/(tabs)/profile/page.js",
-  "/api/backend/[...path]/route": "app/api/backend/[...path]/route.js",
-  "/api/session/route": "app/api/session/route.js",
-  "/sign-in/login/page": "app/sign-in/login/page.js"
+  "/sign-in/login/page": "app/sign-in/login/page.js",
+  "/sign-up/onboarding/page": "app/sign-up/onboarding/page.js"
 }
