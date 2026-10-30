@@ -492,10 +492,6 @@
     inset-block: 0;
   }
 
-  .top-0 {
-    top: 0;
-  }
-
   .top-1\.5 {
     top: calc(var(--spacing) * 1.5);
   }
@@ -1683,11 +1679,6 @@
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  .bg-gradient-to-b {
-    --tw-gradient-position: to bottom in oklab;
-    background-image: linear-gradient(var(--tw-gradient-stops));
-  }
-
   .bg-gradient-to-t {
     --tw-gradient-position: to top in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
@@ -2001,11 +1992,6 @@
 
   .text-\[34px\] {
     font-size: 34px;
-  }
-
-  .leading-\[1\.25\] {
-    --tw-leading: 1.25;
-    line-height: 1.25;
   }
 
   .leading-none {

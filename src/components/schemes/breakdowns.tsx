@@ -44,7 +44,7 @@ export type RegularBreakdown = {
   countToQualifyForLoan: number | null;
 };
 
-export type VehicleKind = "auto" | "tricycle";
+export type VehicleKind = "auto" | "tricycle" | "minibus";
 
 export function EquityPercentPicker({
   value,

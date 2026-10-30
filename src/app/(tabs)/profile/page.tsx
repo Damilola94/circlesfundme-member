@@ -40,20 +40,30 @@ function OptionRow({
   danger?: boolean;
 }) {
   return (
-    <button type="button" onClick={onClick} className="flex w-full items-center gap-4 py-3 text-left">
+    <button
+      type="button"
+      onClick={onClick}
+      className="flex w-full items-center gap-4 py-3 text-left"
+    >
       <span
         className={cn(
           "flex size-11 shrink-0 items-center justify-center rounded-full",
-          danger ? "bg-danger-soft text-[#d01d1d]" : "bg-brand-soft text-[#00c281]"
+          danger
+            ? "bg-danger-soft text-[#d01d1d]"
+            : "bg-brand-soft text-[#00c281]",
         )}
       >
         {icon}
       </span>
       <span className={cn("flex-1 text-lg", danger && "text-[#d01d1d]")}>
         {title}
-        {subTitle && <span className="ml-2 text-xs text-[#d01d1d]">{subTitle}</span>}
+        {subTitle && (
+          <span className="ml-2 text-xs text-[#d01d1d]">{subTitle}</span>
+        )}
       </span>
-      <ChevronRight className={cn("size-5", danger ? "text-[#d01d1d]" : "text-[#999]")} />
+      <ChevronRight
+        className={cn("size-5", danger ? "text-[#d01d1d]" : "text-[#999]")}
+      />
     </button>
   );
 }
@@ -66,19 +76,35 @@ export default function ProfilePage() {
 
   const sendOtp = useMutation({
     mutationFn: async (navigateTo: string) => {
-      const res = await api({ endpoint: "accounts/send-onboarding-otp", method: "POST", body: { email: user?.email } });
+      const res = await api({
+        endpoint: "accounts/send-onboarding-otp",
+        method: "POST",
+        body: { email: user?.email },
+      });
       return { res, navigateTo };
     },
     onSuccess: ({ res, navigateTo }) => {
       if (!isOk(res)) {
-        showToast({ type: "error", text1: "OTP Failed", text2: res?.message || "Please try again later" });
+        showToast({
+          type: "error",
+          text1: "OTP Failed",
+          text2: res?.message || "Please try again later",
+        });
         return;
       }
-      showToast({ type: "success", text1: "OTP Sent", text2: "Follow the instructions sent to your email" });
+      showToast({
+        type: "success",
+        text1: "OTP Sent",
+        text2: "Follow the instructions sent to your email",
+      });
       router.push(navigateTo);
     },
     onError: (error: Error) =>
-      showToast({ type: "error", text1: "Something went wrong", text2: error.message || "Please try again later" }),
+      showToast({
+        type: "error",
+        text1: "Something went wrong",
+        text2: error.message || "Please try again later",
+      }),
   });
 
   async function signOut() {
@@ -89,30 +115,53 @@ export default function ProfilePage() {
   }
 
   const deactivate = useMutation({
-    mutationFn: () => api({ endpoint: "users/deactivate-account", method: "POST" }),
+    mutationFn: () =>
+      api({ endpoint: "users/deactivate-account", method: "POST" }),
     onSuccess: async (res) => {
       if (!isOk(res)) {
-        showToast({ type: "error", text1: "Deactivation Failed", text2: res?.message || "Please try again later" });
+        showToast({
+          type: "error",
+          text1: "Deactivation Failed",
+          text2: res?.message || "Please try again later",
+        });
         return;
       }
-      showToast({ type: "success", text1: "Account Deactivated", text2: "Your account has been successfully deactivated" });
+      showToast({
+        type: "success",
+        text1: "Account Deactivated",
+        text2: "Your account has been successfully deactivated",
+      });
       await signOut();
     },
     onError: (error: Error) =>
-      showToast({ type: "error", text1: "Something went wrong", text2: error.message || "Please try again later" }),
+      showToast({
+        type: "error",
+        text1: "Something went wrong",
+        text2: error.message || "Please try again later",
+      }),
   });
 
   async function copyMemberCode() {
     if (!user?.memberCode) return;
     try {
       await navigator.clipboard.writeText(user.memberCode);
-      showToast({ type: "success", text1: "Copied!", text2: "Member code copied to clipboard" });
+      showToast({
+        type: "success",
+        text1: "Copied!",
+        text2: "Member code copied to clipboard",
+      });
     } catch {
-      showToast({ type: "error", text1: "Couldn’t copy", text2: user.memberCode });
+      showToast({
+        type: "error",
+        text1: "Couldn’t copy",
+        text2: user.memberCode,
+      });
     }
   }
 
-  const name = user ? `${user.firstName ?? ""} ${user.lastName ?? ""}`.trim() : "Guest User";
+  const name = user
+    ? `${user.firstName ?? ""} ${user.lastName ?? ""}`.trim()
+    : "Guest User";
   const isDeactivate = modal === "deactivate";
 
   return (
@@ -123,7 +172,11 @@ export default function ProfilePage() {
       <div className="mt-4 flex flex-col items-center gap-2">
         <Avatar src={user?.profilePictureUrl} alt={name} className="size-32" />
         <p className="mt-2 text-xl font-medium">{name}</p>
-        <button type="button" onClick={copyMemberCode} className="flex items-center gap-1.5 text-base text-muted-foreground">
+        <button
+          type="button"
+          onClick={copyMemberCode}
+          className="flex items-center gap-1.5 text-base text-muted-foreground"
+        >
           {user?.memberCode ? `#${user.memberCode}` : "No Member Code"}
           {user?.memberCode && <Copy className="size-3.5 text-foreground" />}
         </button>
@@ -132,7 +185,11 @@ export default function ProfilePage() {
       <div className="mt-6 flex flex-col">
         <OptionRow
           title="Profile Settings"
-          subTitle={user && user.onboardingStatus !== "Completed" ? "INCOMPLETE" : undefined}
+          subTitle={
+            user && user.onboardingStatus !== "Completed"
+              ? "INCOMPLETE"
+              : undefined
+          }
           icon={<UserRound className="size-5" />}
           onClick={() => router.push("/profile/profile-setting")}
         />
@@ -155,10 +212,28 @@ export default function ProfilePage() {
             sendOtp.mutate("/profile/verify-card-otp");
           }}
         />
-        <OptionRow title="Payment Settings" icon={<Wallet className="size-5" />} onClick={() => router.push("/profile/payment-setting")} />
-        <OptionRow title="Notifications" icon={<Bell className="size-5" />} onClick={() => router.push("/profile/notification")} />
-        <OptionRow title="Deactivate Account" icon={<OctagonX className="size-5" />} danger onClick={() => setModal("deactivate")} />
-        <OptionRow title="Log Out" icon={<LogOut className="size-5" />} danger onClick={() => setModal("logout")} />
+        <OptionRow
+          title="Payment Settings"
+          icon={<Wallet className="size-5" />}
+          onClick={() => router.push("/profile/payment-setting")}
+        />
+        <OptionRow
+          title="Notifications"
+          icon={<Bell className="size-5" />}
+          onClick={() => router.push("/profile/notification")}
+        />
+        <OptionRow
+          title="Deactivate Account"
+          icon={<OctagonX className="size-5" />}
+          danger
+          onClick={() => setModal("deactivate")}
+        />
+        <OptionRow
+          title="Log Out"
+          icon={<LogOut className="size-5" />}
+          danger
+          onClick={() => setModal("logout")}
+        />
       </div>
 
       <StatusDialog
@@ -166,12 +241,17 @@ export default function ProfilePage() {
         onOpenChange={() => setModal(null)}
         icon={
           isDeactivate ? (
-            <TriangleAlert className="size-24 text-[#c60808]" strokeWidth={1.8} />
+            <TriangleAlert
+              className="size-24 text-[#c60808]"
+              strokeWidth={1.8}
+            />
           ) : (
             <CircleHelp className="size-24 text-forest" strokeWidth={1.8} />
           )
         }
-        title={isDeactivate ? "Deactivate Account?" : "Log out of your account?"}
+        title={
+          isDeactivate ? "Deactivate Account?" : "Log out of your account?"
+        }
         description={
           isDeactivate
             ? "This action will disable your account and you will no longer have access to your data."

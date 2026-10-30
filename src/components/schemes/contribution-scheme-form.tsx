@@ -20,6 +20,29 @@ import {
 
 type SchemeMini = { id: string; name: string; type: string };
 
+export enum VehiclePlan {
+  Standard = "Standard",
+  Premium = "Premium",
+}
+
+const VEHICLE_KIND_BY_SCHEME: Record<string, VehicleKind> = {
+  "Auto Financing": "auto",
+  "Tricycle Financing": "tricycle",
+  "Mini Bus Financing": "minibus",
+};
+
+const VEHICLE_BREAKDOWN_ENDPOINTS: Record<VehicleKind, string> = {
+  auto: "contributionschemes/auto-finance-breakdown",
+  tricycle: "contributionschemes/tricycle-finance-breakdown",
+  minibus: "contributionschemes/mini-bus-finance-breakdown",
+};
+
+const VEHICLE_NOUNS: Record<VehicleKind, string> = {
+  auto: "vehicle",
+  tricycle: "Tricycle",
+  minibus: "Mini Bus",
+};
+
 export type ContributionSchemeValues = {
   schemeId: string;
   isVehicle: boolean;
@@ -30,6 +53,8 @@ export type ContributionSchemeValues = {
   monthDay: string;
   referralCode: string;
   equityPercent: number;
+  /** Only set for vehicle schemes. */
+  vehiclePlan: VehiclePlan | null;
 };
 
 /**
@@ -48,6 +73,7 @@ export function useContributionSchemeForm({ withEquity, withReferral }: { withEq
   const [referralCode, setRawReferralCode] = useState("");
   const [equityPercent, setRawEquityPercent] = useState(10);
   const [regularEquityPercent, setRawRegularEquityPercent] = useState(10);
+  const [vehiclePlan, setRawVehiclePlan] = useState<VehiclePlan>(VehiclePlan.Standard);
   const [vehicle, setVehicle] = useState<VehicleBreakdown | null>(null);
   const [vehicleError, setVehicleError] = useState<string | null>(null);
   const [regular, setRegular] = useState<RegularBreakdown | null>(null);
@@ -70,9 +96,9 @@ export function useContributionSchemeForm({ withEquity, withReferral }: { withEq
   const setReferralCode = clearing(setRawReferralCode);
   const setEquityPercent = clearing(setRawEquityPercent);
   const setRegularEquityPercent = clearing(setRawRegularEquityPercent);
+  const setVehiclePlan = clearing(setRawVehiclePlan);
 
-  const vehicleKind: VehicleKind | null =
-    scheme === "Auto Financing" ? "auto" : scheme === "Tricycle Financing" ? "tricycle" : null;
+  const vehicleKind: VehicleKind | null = VEHICLE_KIND_BY_SCHEME[scheme] ?? null;
   const isRegular = !!scheme && !vehicleKind;
   const incomeValue = toNumber(income);
   const contributionValue = toNumber(contribution);
@@ -103,8 +129,7 @@ export function useContributionSchemeForm({ withEquity, withReferral }: { withEq
   const vehicleMutation = useMutation({
     mutationFn: (body: object) =>
       api<VehicleBreakdown>({
-        endpoint:
-          vehicleKind === "tricycle" ? "contributionschemes/tricycle-finance-breakdown" : "contributionschemes/auto-finance-breakdown",
+        endpoint: VEHICLE_BREAKDOWN_ENDPOINTS[vehicleKind!],
         method: "POST",
         body,
         returnErrorData: true,
@@ -143,10 +168,11 @@ export function useContributionSchemeForm({ withEquity, withReferral }: { withEq
     const intended = toNumber(debouncedIntended);
     fetchVehicle({
       costOfVehicle: cost,
+      vehiclePlan,
       ...(withEquity && { equityPercent }),
       ...(withEquity && intended > 0 && { contributionAmount: intended }),
     });
-  }, [vehicleKind, debouncedAssetCost, equityPercent, debouncedIntended, fetchVehicle, withEquity]);
+  }, [vehicleKind, debouncedAssetCost, equityPercent, vehiclePlan, debouncedIntended, fetchVehicle, withEquity]);
 
   useEffect(() => {
     if (!isRegular || debouncedContribution <= 0 || !schemeId) return;
@@ -196,6 +222,7 @@ export function useContributionSchemeForm({ withEquity, withReferral }: { withEq
       monthDay: isDaily ? "" : monthDayValue(monthDay),
       referralCode: referralCode.trim(),
       equityPercent: vehicleKind ? equityPercent : regularEquityPercent,
+      vehiclePlan: vehicleKind ? vehiclePlan : null,
     };
   }
 
@@ -225,12 +252,19 @@ export function useContributionSchemeForm({ withEquity, withReferral }: { withEq
       {vehicleKind && (
         <>
           <TextField
-            label={`What is the cost of the ${vehicleKind === "auto" ? "vehicle" : "Tricycle"}?`}
+            label={`What is the cost of the ${VEHICLE_NOUNS[vehicleKind]}?`}
             placeholder="Enter Amount"
             valueType="money"
             value={assetCost}
             onValueChange={setAssetCost}
             error={vehicleError ?? undefined}
+          />
+          <SelectField
+            label="Vehicle Plan"
+            placeholder="Select a vehicle plan"
+            options={Object.values(VehiclePlan)}
+            value={vehiclePlan}
+            onSelect={(v) => setVehiclePlan(v as VehiclePlan)}
           />
           {withEquity && <EquityPercentPicker value={equityPercent} onChange={setEquityPercent} />}
           {vehicleMutation.isPending && <p className="text-sm text-muted-foreground">Calculating breakdown...</p>}

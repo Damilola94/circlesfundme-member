@@ -56,7 +56,7 @@ function OptionRow({ title, subTitle, icon, onClick, danger }) {
                 children: icon
             }, void 0, false, {
                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                lineNumber: 44,
+                lineNumber: 48,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -68,20 +68,20 @@ function OptionRow({ title, subTitle, icon, onClick, danger }) {
                         children: subTitle
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 54,
-                        columnNumber: 22
+                        lineNumber: 61,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                lineNumber: 52,
+                lineNumber: 58,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$cn$2f$dist$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["cn"])("size-5", danger ? "text-[#d01d1d]" : "text-[#999]")
             }, void 0, false, {
                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                lineNumber: 56,
+                lineNumber: 64,
                 columnNumber: 7
             }, this)
         ]
@@ -191,7 +191,7 @@ function ProfilePage() {
                 message: "Sending OTP..."
             }, void 0, false, {
                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                lineNumber: 120,
+                lineNumber: 169,
                 columnNumber: 29
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -199,7 +199,7 @@ function ProfilePage() {
                 children: "Profile"
             }, void 0, false, {
                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                lineNumber: 121,
+                lineNumber: 170,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -211,7 +211,7 @@ function ProfilePage() {
                         className: "size-32"
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 124,
+                        lineNumber: 173,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -219,7 +219,7 @@ function ProfilePage() {
                         children: name
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 125,
+                        lineNumber: 174,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -232,19 +232,19 @@ function ProfilePage() {
                                 className: "size-3.5 text-foreground"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                                lineNumber: 128,
+                                lineNumber: 181,
                                 columnNumber: 32
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 126,
+                        lineNumber: 175,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                lineNumber: 123,
+                lineNumber: 172,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -257,13 +257,13 @@ function ProfilePage() {
                             className: "size-5"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 136,
+                            lineNumber: 193,
                             columnNumber: 17
                         }, this),
                         onClick: ()=>router.push("/profile/profile-setting")
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 133,
+                        lineNumber: 186,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(OptionRow, {
@@ -272,13 +272,13 @@ function ProfilePage() {
                             className: "size-5"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 141,
+                            lineNumber: 198,
                             columnNumber: 17
                         }, this),
                         onClick: ()=>sendOtp.mutate("/profile/update-password-setting")
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 139,
+                        lineNumber: 196,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(OptionRow, {
@@ -287,7 +287,7 @@ function ProfilePage() {
                             className: "size-5"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 146,
+                            lineNumber: 203,
                             columnNumber: 17
                         }, this),
                         onClick: ()=>{
@@ -302,7 +302,7 @@ function ProfilePage() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 144,
+                        lineNumber: 201,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(OptionRow, {
@@ -311,13 +311,13 @@ function ProfilePage() {
                             className: "size-5"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 158,
-                            columnNumber: 51
+                            lineNumber: 217,
+                            columnNumber: 17
                         }, this),
                         onClick: ()=>router.push("/profile/payment-setting")
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 158,
+                        lineNumber: 215,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(OptionRow, {
@@ -326,13 +326,13 @@ function ProfilePage() {
                             className: "size-5"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 159,
-                            columnNumber: 48
+                            lineNumber: 222,
+                            columnNumber: 17
                         }, this),
                         onClick: ()=>router.push("/profile/notification")
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 159,
+                        lineNumber: 220,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(OptionRow, {
@@ -341,14 +341,14 @@ function ProfilePage() {
                             className: "size-5"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 160,
-                            columnNumber: 53
+                            lineNumber: 227,
+                            columnNumber: 17
                         }, this),
                         danger: true,
                         onClick: ()=>setModal("deactivate")
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 160,
+                        lineNumber: 225,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(OptionRow, {
@@ -357,20 +357,20 @@ function ProfilePage() {
                             className: "size-5"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 161,
-                            columnNumber: 42
+                            lineNumber: 233,
+                            columnNumber: 17
                         }, this),
                         danger: true,
                         onClick: ()=>setModal("logout")
                     }, void 0, false, {
                         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                        lineNumber: 161,
+                        lineNumber: 231,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                lineNumber: 132,
+                lineNumber: 185,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$feedback$2f$status$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["StatusDialog"], {
@@ -381,14 +381,14 @@ function ProfilePage() {
                     strokeWidth: 1.8
                 }, void 0, false, {
                     fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                    lineNumber: 169,
+                    lineNumber: 244,
                     columnNumber: 13
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$question$2d$mark$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CircleHelp$3e$__["CircleHelp"], {
                     className: "size-24 text-forest",
                     strokeWidth: 1.8
                 }, void 0, false, {
                     fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                    lineNumber: 171,
+                    lineNumber: 249,
                     columnNumber: 13
                 }, this),
                 title: isDeactivate ? "Deactivate Account?" : "Log out of your account?",
@@ -402,7 +402,7 @@ function ProfilePage() {
                             children: "Cancel"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 182,
+                            lineNumber: 262,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -413,24 +413,24 @@ function ProfilePage() {
                             children: isDeactivate ? "Deactivate" : "Log Out"
                         }, void 0, false, {
                             fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                            lineNumber: 185,
+                            lineNumber: 265,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                    lineNumber: 181,
+                    lineNumber: 261,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-                lineNumber: 164,
+                lineNumber: 239,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/(tabs)/profile/page.tsx",
-        lineNumber: 119,
+        lineNumber: 168,
         columnNumber: 5
     }, this);
 }
